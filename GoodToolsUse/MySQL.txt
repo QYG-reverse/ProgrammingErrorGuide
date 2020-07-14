@@ -1,0 +1,14 @@
+[使用]
+  = = = 一些说明 = = =
+  
+  Linux下
+  查看mysql是否启动
+    命令：ps -ef | grep mysqld
+
+  启动mysqld
+    命令：./mysqld_safe &
+
+  关闭mysqld
+    命令：./mysqladmin -u root -p shutdown
+
+[问题]
