@@ -11,4 +11,45 @@
   关闭mysqld
     命令：./mysqladmin -u root -p shutdown
 
+  登录数据库
+    命令：mysql -u root -p password(密码)
+
+  切换数据库
+    命令：use test(数据库名);
+
+  导入sql到数据库
+    命令：source /home/wuming/test.sql(路径名);
+
+  查看表结构
+    命令：desc boss(表名);
+
+  启动mysql服务
+    命令：service mysql start
+
+  停止mysql服务
+    命令：service mysql stop
+
+  重启mysql服务
+    命令：service mysql restart
+
+  共同适用
+  删除表数据
+    命令：TRUNCATE TABLE table_name
+  同时删除表数据和表结构
+    命令：DROP TABLE table_name
+  批量创建过程
+delimiter //
+drop procedure if exists test;
+create procedure test()
+begin
+    declare i int default 0;
+    set i = 19237;
+    while i < 19335 do
+        insert into proxy(`ID`,`IP`,`ErrNum`,`State`) values(i,'192.168.1.27:666', 0, 0);
+        set i = i + 1;
+    end while;
+end
+//
+call test();
+
 [问题]
